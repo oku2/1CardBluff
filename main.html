@@ -83,6 +83,33 @@
 
         roundwindow {
             display: none;
+            height: 100svh;
+            width: 100svw;
+            grid-template-areas: 
+            "roundcard playernametext"
+            "roundcard cardshowbutton"
+            "roundcard nextstep"
+            ;
+        }
+
+        .roundcard {
+            display: grid;
+            grid-area: roundcard;
+        }
+
+        .playernametext {
+            display: grid;
+            grid-area: playernametext;
+        }
+
+        .cardshowbutton {
+            display: grid;
+            grid-area: cardshowbutton;
+        }
+
+        .nextstep {
+            display: grid;
+            grid-area: nextstep;
         }
 
 
@@ -166,7 +193,19 @@
         </playerselect>
 
         <roundwindow>
-            <p>roundwindow</p>
+            <div class="roundcard">
+                <p>card placeholder</p>
+            </div>
+            <div class="playernametext">
+                <p>pelaaja x</p>
+            </div>
+            <div class="cardshowbutton">
+                <button type="button">näytä kortti</button>
+            </div>
+            <div class="nextstep">
+                <button type="button">seuraava</button>
+            </div>
+
         </roundwindow>
 
     </game>
