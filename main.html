@@ -52,6 +52,39 @@
             display: block;
         }
 
+        playerselect {
+            display: grid;
+            height: 100svh;
+            width: 100svw;
+            grid-template-areas: 
+            "selectionheader selectionheader selectionheader"
+            "playerselection1 playerselection2 playerselection3"
+            ;
+        }
+
+        .playerselection1 {
+            display: grid;
+            grid-area: playerselection1;
+        }
+        .playerselection2 {
+            display: grid;
+            grid-area: playerselection2;
+        }
+        .playerselection3 {
+            display: grid;
+            grid-area: playerselection3;
+        }
+
+        selectionheader {
+            display: grid;
+            grid-area: selectionheader;
+        }
+
+
+        roundwindow {
+            display: none;
+        }
+
 
         /* link styling */
         a:link {
@@ -114,7 +147,27 @@
     </instructions>
 
     <game>
-        <p>peli</p>
+        <playerselect>
+            <selectionheader>
+                <h1>
+                    Valitse pelaajien määrä
+                </h1>
+            </selectionheader>
+            <div class="playerselection1">
+                <button type="button">2 pelaajaa</button>
+            </div>
+            <div class="playerselection2">
+                <button type="button">3 pelaajaa</button>
+            </div>
+            <div class="playerselection3">
+                <button type="button">4 pelaajaa</button>
+            </div>
+
+        </playerselect>
+
+        <roundwindow>
+            <p>roundwindow</p>
+        </roundwindow>
 
     </game>
 
