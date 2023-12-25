@@ -63,12 +63,12 @@ function players(number) {
     playernumber.innerText = "Pelaaja: " + playerArray[playerIndex];
     if (playerCount === 3) {
         let player3 = document.getElementById("show3");
-        player3.style.display = "grid";
+        player3.style.display = "flex";
     } else if (playerCount === 4) {
         let player3 = document.getElementById("show3");
-        player3.style.display = "grid";
+        player3.style.display = "flex";
         let player4 = document.getElementById("show4");
-        player4.style.display = "grid";
+        player4.style.display = "flex";
     }
 }
 
@@ -95,7 +95,7 @@ function nextstep() {
             let rwindow = document.getElementById("rwindow");
             rwindow.style.display = "none";
             let endwindow = document.getElementById("endwindow");
-            endwindow.style.display = "grid";
+            endwindow.style.display = "flex";
             showcardend();
         } else {
             playerIndex++;
