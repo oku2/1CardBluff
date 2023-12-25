@@ -1,8 +1,10 @@
 let playerCount = null;
 let playerIndex = 0;
 const playerArray = []
-
-
+let p1card;
+let p2card;
+let p3card;
+let p4card;
 
 var suits = ["spade", "diamond", "club", "heart"];
 var values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
@@ -72,6 +74,18 @@ function players(number) {
 
 function nextstep() {
     if (deck.length > playerCount) {
+        if (playerIndex === 0) {
+            p1card = deck[0];
+        } else if (playerIndex === 1) {
+            p2card = deck[0]
+        } else if (playerIndex === 2) {
+            p3card = deck[0]
+        }
+        else if (playerIndex === 3) {
+            p4card = deck[0]
+        }
+
+
         deck.shift();
         let card = document.getElementById("card-img");
         card.style.backgroundPosition = "224px -246px";
@@ -82,6 +96,7 @@ function nextstep() {
             rwindow.style.display = "none";
             let endwindow = document.getElementById("endwindow");
             endwindow.style.display = "grid";
+            showcardend();
         } else {
             playerIndex++;
         }
@@ -104,18 +119,31 @@ function nextround() {
 
 function showcardend() {
     if (playerCount === 2) {
-
+        let firstCard = document.getElementById("card-p1");
+        firstCard.style.backgroundPosition = returnCardPlace(p1card);
+        let secondCard = document.getElementById("card-p2");
+        secondCard.style.backgroundPosition = returnCardPlace(p2card);
     } else if (playerCount === 3) {
-
-    } else {
-
+        let firstCard = document.getElementById("card-p1");
+        firstCard.style.backgroundPosition = returnCardPlace(p1card);
+        let secondCard = document.getElementById("card-p2");
+        secondCard.style.backgroundPosition = returnCardPlace(p2card);
+        let thirdCard = document.getElementById("card-p3");
+        thirdCard.style.backgroundPosition = returnCardPlace(p3card);
+    } else if (playerCount === 4) {
+        let firstCard = document.getElementById("card-p1");
+        firstCard.style.backgroundPosition = returnCardPlace(p1card);
+        let secondCard = document.getElementById("card-p2");
+        secondCard.style.backgroundPosition = returnCardPlace(p2card);
+        let thirdCard = document.getElementById("card-p3");
+        thirdCard.style.backgroundPosition = returnCardPlace(p3card);
+        let fourthCard = document.getElementById("card-p4");
+        fourthCard.style.backgroundPosition = returnCardPlace(p4card);
     }
 }
 
-function showcard() {
-    let topCard = deck[0];
-    let card = document.getElementById("card-img");
-    console.log(topCard);
+
+function returnCardPlace(topCard) {
     let w;
     let h;
 
@@ -160,5 +188,11 @@ function showcard() {
         w = "0px";
     }
 
-    card.style.backgroundPosition = " " + w + " " + h;
+    return (w + " " + h);
+}
+
+function showcard() {
+    let topCardFirst = deck[0];
+    let card = document.getElementById("card-img");
+    card.style.backgroundPosition = returnCardPlace(topCardFirst);
 }
