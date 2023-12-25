@@ -37,6 +37,21 @@ function shuffle(deck)
 	}
 }
 
+function shufflePlayers(players) {
+
+    for (let i = 0; i < 10; i++)
+	{
+        let location1 = Math.floor((Math.random() * players.length));
+        let location2 = Math.floor((Math.random() * players.length));
+        let tmp = players[location1];
+    
+        players[location1] = players[location2];
+        players[location2] = tmp;
+	}
+
+
+}
+
 function players(number) {
     playerCount = number;
     var pselect = document.getElementById("pselect");
@@ -78,7 +93,7 @@ function nextstep() {
 }
 
 function nextround() {
-
+    shufflePlayers(playerArray);
     let endwindow = document.getElementById("endwindow");
     endwindow.style.display = "none";
     let rwindow = document.getElementById("rwindow");
