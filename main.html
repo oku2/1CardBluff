@@ -101,6 +101,16 @@
             display: grid;
             grid-area: roundcard;
             align-items: center;
+
+        }
+
+        .card-image {
+            margin:auto;
+            background-image: url(res/kortit.png);
+            background-size: 3166px, 994px;
+            height: 246px;
+            width: 224px;
+            border: dashed;
         }
 
         .playernametext {
@@ -204,10 +214,11 @@
 
         <roundwindow id="rwindow">
             <div class="roundcard">
-                <p>card placeholder</p>
+                <div class="card-image" style="background-position: 224px -246px;">
+                </div>
             </div>
             <div class="playernametext">
-                <p>pelaaja x</p>
+                <p id="playernumber">Pelaaja x</p>
             </div>
             <div class="cardshowbutton">
                 <button type="button">näytä kortti</button>
