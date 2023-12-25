@@ -16,6 +16,7 @@
             background-color: #f0f0f0;
             }
 
+        /* Instructions */
         header {
             position: sticky;
             top: 0;
@@ -25,6 +26,7 @@
             color: #e2dddf;
             z-index: 1000;
             padding: 10px; 
+            
         }
 
 
@@ -37,15 +39,7 @@
             font-size: 4vw;
         }
 
-        .content {
-            
-        }
 
-        .content2 {
-            
-        }
-
-        /* FOOTER */
         footer {
             background: #2f404d;
             padding: 1rem 0;
@@ -53,6 +47,13 @@
             color: #85ebd9;
         }
 
+        /* game styling */
+        game {
+            display: block;
+        }
+
+
+        /* link styling */
         a:link {
             color: rgb(0, 0, 0);
         }
@@ -70,29 +71,23 @@
         }
 
         @media screen and (orientation: landscape) {
-            header {
-            display: block;
-            }
 
-            .content {
+            instructions {
             display: none;
             }
 
-            .content2 {
+            game {
             display: block;
             }
         }
 
         @media screen and (orientation: portrait) {
-            header {
-            display:block;
-            }
 
-            .content {
+            instructions {
             display: block;
             }
 
-            .content2 {
+            game {
             display: none;
             }
 
@@ -103,19 +98,26 @@
 </head>
 
 <body>
-    <header>
-        <h1>otsikko</h1>
-    </header>
+    <instructions>
+        <header>
+            <h1>otsikko</h1>
+        </header>
+    
+        <main>
+            <div class="content">
+                <h1>Ohjeet</h1>
+                <p>lorem ipsum</p>
+            </div>
+        </main>
+    
+        <footer>footer</footer>
+    </instructions>
 
-    <main>
-        <div class="content">
-            <p>pystyssä</p>
-        </div>
-        <div class="content2">
-            <p>vaakatasossa</p>
-        </div>
-    </main>
+    <game>
+        <p>peli</p>
 
-    <footer>footer</footer>
+    </game>
+
+
 </body>
 </html>
