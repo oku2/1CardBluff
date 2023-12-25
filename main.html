@@ -28,14 +28,21 @@
         }
 
 
-
-        .content {
+        main {
             padding-top: 10vh;
             max-height: none;
-            height: 150vh; 
+            height: 100vh; 
             background: #3d898d;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 4vw;
+        }
+
+        .content {
+            
+        }
+
+        .content2 {
+            
         }
 
         /* FOOTER */
@@ -64,7 +71,15 @@
 
         @media screen and (orientation: landscape) {
             header {
+            display: block;
+            }
+
+            .content {
             display: none;
+            }
+
+            .content2 {
+            display: block;
             }
         }
 
@@ -72,6 +87,15 @@
             header {
             display:block;
             }
+
+            .content {
+            display: block;
+            }
+
+            .content2 {
+            display: none;
+            }
+
         }
 
 
@@ -80,12 +104,15 @@
 
 <body>
     <header>
-        <h1>Peli</h1>
+        <h1>otsikko</h1>
     </header>
 
     <main>
         <div class="content">
-            <p>Lorem ipsum</p>
+            <p>pystyssä</p>
+        </div>
+        <div class="content2">
+            <p>vaakatasossa</p>
         </div>
     </main>
 
