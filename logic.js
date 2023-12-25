@@ -3,7 +3,7 @@ let playerIndex = 0;
 const playerArray = []
 
 
-var suits = ["spades", "diamonds", "clubs", "hearts"];
+var suits = ["spade", "diamond", "club", "heart"];
 var values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
 function getDeck()
@@ -14,7 +14,7 @@ function getDeck()
 	{
 		for(let x = 0; x < values.length; x++)
 		{
-			let card = {Value: values[x], Suit: suits[i]};
+			let card = {value: values[x], suit: suits[i]};
 			deck.push(card);
 		}
 	}
@@ -60,6 +60,10 @@ function nextstep() {
         var playernumber = document.getElementById("playernumber");
         if (playerArray[playerIndex+1] === undefined) {
             playerIndex = 0;
+            let rwindow = document.getElementById("rwindow");
+            rwindow.style.display = "none";
+            let endwindow = document.getElementById("endwindow");
+            endwindow.style.display = "grid";
         } else {
             playerIndex++;
         }
@@ -73,7 +77,61 @@ function nextstep() {
 
 }
 
+function nextround() {
+
+    let endwindow = document.getElementById("endwindow");
+    endwindow.style.display = "none";
+    let rwindow = document.getElementById("rwindow");
+    rwindow.style.display = "grid";
+}
 
 function showcard() {
-    //siirrä backround image vastaamaan deck varin ekaa korttia
+    let topCard = deck[0];
+    let card = document.getElementById("card-img");
+    console.log(topCard);
+    let w;
+    let h;
+
+
+    if (topCard.suit === "spade") {
+        h = "246px";
+    } else if (topCard.suit === "diamond") {
+        h = "-246px";
+    } else if (topCard.suit === "club") {
+        h = "0px";
+    } else {
+        h = "497px"
+    }
+
+    if (topCard.value === "A") {
+        w = "0px";
+    } else if (topCard.value === "2") {
+        w = "-224px";
+    } else if (topCard.value === "3") {
+        w = "-448px";
+    } else if (topCard.value === "4") {
+        w = "-672px";
+    } else if (topCard.value === "5") {
+        w = "-896px";
+    } else if (topCard.value === "6") {
+        w = "-1120px";
+    } else if (topCard.value === "7") {
+        w = "-1344px";
+    } else if (topCard.value === "8") {
+        w = "-1568px";
+    } else if (topCard.value === "9") {
+        w = "-1792px";
+    } else if (topCard.value === "10") {
+        w = "-2016px";
+    } else if (topCard.value === "J") {
+        w = "-2240px";
+    } else if (topCard.value === "Q") {
+        w = "-2464px";
+    } else if (topCard.value === "K") {
+        w = "-2688px";
+    } else {
+        w = "0px";
+    }
+
+    card.style.backgroundPosition = " " + w + " " + h;
 }

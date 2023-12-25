@@ -221,7 +221,7 @@
                 <p id="playernumber">Pelaaja x</p>
             </div>
             <div class="cardshowbutton">
-                <button type="button">näytä kortti</button>
+                <button type="button" onclick="showcard()">näytä kortti</button>
             </div>
             <div class="nextstep">
                 <button type="button" onclick="nextstep()">seuraava</button>
@@ -229,8 +229,8 @@
 
         </roundwindow>
 
-        <roundendwindow>
-            
+        <roundendwindow id="endwindow">
+            <button type="button" onclick="nextround()">seuraava kierros</button>
         </roundendwindow>
 
     </game>
