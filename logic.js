@@ -37,34 +37,49 @@ function shuffle(deck)
 	}
 }
 
-function shufflePlayers(players) {
-
-    for (let i = 0; i < 10; i++)
-	{
-        let location1 = Math.floor((Math.random() * players.length));
-        let location2 = Math.floor((Math.random() * players.length));
-        let tmp = players[location1];
-    
-        players[location1] = players[location2];
-        players[location2] = tmp;
-	}
 
 
+
+function isInt(value) {
+    const intValue = parseInt(value, 10);
+    return !isNaN(intValue) && intValue.toString() === value.toString();
 }
 
 function players(number) {
-    playerCount = number;
-    var pselect = document.getElementById("pselect");
-    pselect.style.display = "none";
-    var rwindow = document.getElementById("rwindow");
-    rwindow.style.display = "grid";
+    if (number === 2) {
+        playerCount = document.getElementById("nofplayers").value;
+        if (isInt(playerCount)) {
+            var pselect = document.getElementById("pselect");
+            pselect.style.display = "none";
+            var rwindow = document.getElementById("rwindow");
+            rwindow.style.display = "grid";
+        
+            shuffle(deck);
+            for (let i = 0; i < playerCount; i++) {
+                playerArray[i] = (i+1);
+              }
+            var playernumber = document.getElementById("playernumber");
+            playernumber.innerText = "Pelaaja: " + playerArray[playerIndex];
+        } else {
+            alert("Syötä numero");
+        }
+        
+    } else {
+        playerCount = number;
+        var pselect = document.getElementById("pselect");
+        pselect.style.display = "none";
+        var rwindow = document.getElementById("rwindow");
+        rwindow.style.display = "grid";
+    
+        shuffle(deck);
+        for (let i = 0; i < number; i++) {
+            playerArray[i] = (i+1);
+          }
+        var playernumber = document.getElementById("playernumber");
+        playernumber.innerText = "Pelaaja: " + playerArray[playerIndex];
+    }
+    
 
-    shuffle(deck);
-    for (let i = 0; i < number; i++) {
-        playerArray[i] = (i+1);
-      }
-    var playernumber = document.getElementById("playernumber");
-    playernumber.innerText = "Pelaaja " + playerArray[playerIndex];
 }
 
 function nextstep() {
@@ -83,7 +98,7 @@ function nextstep() {
             playerIndex++;
         }
         
-        playernumber.innerText = "Pelaaja " + playerArray[playerIndex];
+        playernumber.innerText = "Pelaaja: " + playerArray[playerIndex];
     }
     else {
         alert("Pakka tyhjä");
@@ -93,7 +108,6 @@ function nextstep() {
 }
 
 function nextround() {
-    shufflePlayers(playerArray);
     let endwindow = document.getElementById("endwindow");
     endwindow.style.display = "none";
     let rwindow = document.getElementById("rwindow");

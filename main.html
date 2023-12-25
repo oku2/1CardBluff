@@ -129,8 +129,30 @@
             grid-area: nextstep;
         }
 
+        roundendwindow {
+            display: none;
+        }
 
-        /* link styling */
+
+        playernames {
+            display: none;
+            width: 100svw;
+            height: 100svh;
+        }
+
+        #nameInput2 {
+            display: none;
+        }
+        #nameInput3 {
+            display: none;
+        }
+        #nameInput4 {
+            display: none;
+        }
+
+
+
+        
         a:link {
             color: rgb(0, 0, 0);
         }
@@ -201,7 +223,8 @@
                 </h1>
             </selectionheader>
             <div class="playerselection1">
-                <button type="button" onclick="players(2)">2 pelaajaa</button>
+                <input type="text" id="nofplayers">
+                <button type="button" onclick="players(2)">x pelaajaa</button>
             </div>
             <div class="playerselection2">
                 <button type="button" onclick="players(3)">3 pelaajaa</button>
