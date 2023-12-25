@@ -47,15 +47,15 @@ function isInt(value) {
 
 function players(number) {
     if (number === 2) {
-        playerCount = document.getElementById("nofplayers").value;
-        if (isInt(playerCount)) {
+        //playerCount = document.getElementById("nofplayers").value;
+        if (isInt(number)) {
             var pselect = document.getElementById("pselect");
             pselect.style.display = "none";
             var rwindow = document.getElementById("rwindow");
             rwindow.style.display = "grid";
         
             shuffle(deck);
-            for (let i = 0; i < playerCount; i++) {
+            for (let i = 0; i < number; i++) {
                 playerArray[i] = (i+1);
               }
             var playernumber = document.getElementById("playernumber");
@@ -83,7 +83,7 @@ function players(number) {
 }
 
 function nextstep() {
-    if (deck.length !== 0) {
+    if (deck.length > playerCount) {
         deck.shift();
         let card = document.getElementById("card-img");
         card.style.backgroundPosition = "224px -246px";
@@ -101,7 +101,7 @@ function nextstep() {
         playernumber.innerText = "Pelaaja: " + playerArray[playerIndex];
     }
     else {
-        alert("Pakka tyhjä");
+        alert("Pakka liian tyhjä, sekoitetaan");
         shuffle(deck);
     }
 
