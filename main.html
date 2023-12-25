@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peli</title>
+    <title>Title</title>
     <style>
         * {
             margin: 0;
@@ -54,6 +54,68 @@
         /* game styling */
         game {
             display: block;
+        }
+
+        playerselect {
+            display: grid;
+            height: 100svh;
+            width: 100svw;
+            grid-template-areas: 
+            "selectionheader selectionheader selectionheader"
+            "playerselection1 playerselection2 playerselection3"
+            ;
+        }
+
+        .playerselection1 {
+            display: grid;
+            grid-area: playerselection1;
+        }
+        .playerselection2 {
+            display: grid;
+            grid-area: playerselection2;
+        }
+        .playerselection3 {
+            display: grid;
+            grid-area: playerselection3;
+        }
+
+        selectionheader {
+            display: grid;
+            grid-area: selectionheader;
+        }
+
+
+        roundwindow {
+            display: none;
+            height: 100svh;
+            width: 100svw;
+            grid-template-areas: 
+            "roundcard playernametext"
+            "roundcard cardshowbutton"
+            "roundcard nextstep"
+            ;
+        }
+
+        .roundcard {
+            display: grid;
+            grid-area: roundcard;
+            align-items: center;
+        }
+
+        .playernametext {
+            display: grid;
+            grid-area: playernametext;
+            align-items: center;
+        }
+
+        .cardshowbutton {
+            display: grid;
+            grid-area: cardshowbutton;
+        }
+
+        .nextstep {
+            display: grid;
+            grid-area: nextstep;
         }
 
 
@@ -120,7 +182,43 @@
     </instructions>
 
     <game>
-        <p>peli</p>
+        <playerselect>
+            <selectionheader>
+                <h1>
+                    Valitse pelaajien määrä
+                </h1>
+            </selectionheader>
+            <div class="playerselection1">
+                <button type="button">2 pelaajaa</button>
+            </div>
+            <div class="playerselection2">
+                <button type="button">3 pelaajaa</button>
+            </div>
+            <div class="playerselection3">
+                <button type="button">4 pelaajaa</button>
+            </div>
+
+        </playerselect>
+
+        <roundwindow>
+            <div class="roundcard">
+                <p>card placeholder</p>
+            </div>
+            <div class="playernametext">
+                <p>pelaaja x</p>
+            </div>
+            <div class="cardshowbutton">
+                <button type="button">näytä kortti</button>
+            </div>
+            <div class="nextstep">
+                <button type="button">seuraava</button>
+            </div>
+
+        </roundwindow>
+
+        <roundendwindow>
+            
+        </roundendwindow>
 
     </game>
 
