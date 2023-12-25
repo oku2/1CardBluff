@@ -131,25 +131,17 @@
 
         roundendwindow {
             display: none;
-        }
-
-
-        playernames {
-            display: none;
             width: 100svw;
             height: 100svh;
         }
 
-        #nameInput2 {
-            display: none;
-        }
-        #nameInput3 {
-            display: none;
-        }
-        #nameInput4 {
-            display: none;
+        #show2 {
+            display: grid;
         }
 
+        #show3 {
+            display: none;
+        }
 
 
         
@@ -223,7 +215,6 @@
                 </h1>
             </selectionheader>
             <div class="playerselection1">
-                <!--<input type="text" id="nofplayers">-->
                 <button type="button" onclick="players(2)">2 pelaajaa</button>
             </div>
             <div class="playerselection2">
@@ -253,7 +244,21 @@
         </roundwindow>
 
         <roundendwindow id="endwindow">
-            <button type="button" onclick="nextround()">seuraava kierros</button>
+            <div id="show2">
+                <p>Pelaaja 1</p>
+                <div id="card-p1" class="card-image" style="background-position: 224px -246px;"></div>
+                <p>Pelaaja 2</p>
+                <div id="card-p2" class="card-image" style="background-position: 224px -246px;"></div>
+            </div>
+            <div id="show3">
+                <p>Pelaaja 3</p>
+                <div id="card-p3" class="card-image" style="background-position: 224px -246px;"></div>
+            </div>
+            <div id="show4">
+                <p>Pelaaja 4</p>
+                <div id="card-p4" class="card-image" style="background-position: 224px -246px;"></div>
+            </div>
+            <button type="button" onclick="nextround()">Seuraava kierros</button>
         </roundendwindow>
 
     </game>

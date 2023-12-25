@@ -3,6 +3,7 @@ let playerIndex = 0;
 const playerArray = []
 
 
+
 var suits = ["spade", "diamond", "club", "heart"];
 var values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
@@ -58,8 +59,15 @@ function players(number) {
       }
     var playernumber = document.getElementById("playernumber");
     playernumber.innerText = "Pelaaja: " + playerArray[playerIndex];
-    
-
+    if (playerCount === 3) {
+        let player3 = document.getElementById("show3");
+        player3.style.display = "grid";
+    } else if (playerCount === 4) {
+        let player3 = document.getElementById("show3");
+        player3.style.display = "grid";
+        let player4 = document.getElementById("show4");
+        player4.style.display = "grid";
+    }
 }
 
 function nextstep() {
@@ -92,6 +100,16 @@ function nextround() {
     endwindow.style.display = "none";
     let rwindow = document.getElementById("rwindow");
     rwindow.style.display = "grid";
+}
+
+function showcardend() {
+    if (playerCount === 2) {
+
+    } else if (playerCount === 3) {
+
+    } else {
+
+    }
 }
 
 function showcard() {
