@@ -46,38 +46,18 @@ function isInt(value) {
 }
 
 function players(number) {
-    if (number === 2) {
-        //playerCount = document.getElementById("nofplayers").value;
-        if (isInt(number)) {
-            var pselect = document.getElementById("pselect");
-            pselect.style.display = "none";
-            var rwindow = document.getElementById("rwindow");
-            rwindow.style.display = "grid";
-        
-            shuffle(deck);
-            for (let i = 0; i < number; i++) {
-                playerArray[i] = (i+1);
-              }
-            var playernumber = document.getElementById("playernumber");
-            playernumber.innerText = "Pelaaja: " + playerArray[playerIndex];
-        } else {
-            alert("Syötä numero");
-        }
-        
-    } else {
-        playerCount = number;
-        var pselect = document.getElementById("pselect");
-        pselect.style.display = "none";
-        var rwindow = document.getElementById("rwindow");
-        rwindow.style.display = "grid";
-    
-        shuffle(deck);
-        for (let i = 0; i < number; i++) {
-            playerArray[i] = (i+1);
-          }
-        var playernumber = document.getElementById("playernumber");
-        playernumber.innerText = "Pelaaja: " + playerArray[playerIndex];
-    }
+    playerCount = number;
+    var pselect = document.getElementById("pselect");
+    pselect.style.display = "none";
+    var rwindow = document.getElementById("rwindow");
+    rwindow.style.display = "grid";
+
+    shuffle(deck);
+    for (let i = 0; i < number; i++) {
+        playerArray[i] = (i+1);
+      }
+    var playernumber = document.getElementById("playernumber");
+    playernumber.innerText = "Pelaaja: " + playerArray[playerIndex];
     
 
 }
