@@ -162,6 +162,7 @@
 
 
     </style>
+    <script src="logic.js"></script>
 </head>
 
 <body>
@@ -183,25 +184,25 @@
     </instructions>
 
     <game>
-        <playerselect>
+        <playerselect id="pselect">
             <selectionheader>
                 <h1>
                     Valitse pelaajien määrä
                 </h1>
             </selectionheader>
             <div class="playerselection1">
-                <button type="button">2 pelaajaa</button>
+                <button type="button" onclick="players(2)">2 pelaajaa</button>
             </div>
             <div class="playerselection2">
-                <button type="button">3 pelaajaa</button>
+                <button type="button" onclick="players(3)">3 pelaajaa</button>
             </div>
             <div class="playerselection3">
-                <button type="button">4 pelaajaa</button>
+                <button type="button" onclick="players(4)">4 pelaajaa</button>
             </div>
 
         </playerselect>
 
-        <roundwindow>
+        <roundwindow id="rwindow">
             <div class="roundcard">
                 <p>card placeholder</p>
             </div>
